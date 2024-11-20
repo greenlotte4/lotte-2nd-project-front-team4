@@ -1,0 +1,54 @@
+# 프로젝트 폴더 구조 설명 (참조 순)
+
+1. **routes/**
+
+   - 프로젝트의 `Route` 설정 파일이 위치합니다.
+   - `pages/`를 참조하여 React Router DOM을 통해 애플리케이션 라우팅을 관리합니다.
+
+2. **pages/**
+
+   - 각 라우트에 매핑되는 주요 페이지 컴포넌트를 저장합니다.
+   - 페이지는 `components/`, `layouts/`의 컴포넌트를 조합하여 화면을 구성하며, `hooks/` 및 `services/`를 활용합니다.
+   - 예: `Home.jsx`, `About.jsx`, `Dashboard.jsx` 등.
+
+3. **layouts/**
+
+   - 공통 레이아웃 컴포넌트를 저장합니다.
+   - 예: `Header`, `Footer`, `Sidebar`와 같은 페이지 구조를 결정하는 컴포넌트.
+   - `pages/`에서 참조됩니다.
+
+4. **components/**
+
+   - 재사용 가능한 독립적인 UI 컴포넌트를 저장합니다.
+   - 버튼, 카드, 입력 필드 등 다양한 UI 요소들이 포함됩니다.
+   - `layouts/`, `pages/`에서 참조됩니다.
+
+5. **hooks/**
+
+   - 커스텀 React Hooks를 저장합니다.
+   - API 호출 및 상태 관리를 쉽게 하기 위해 `services/`를 참조합니다.
+   - 예: `useAuth`, `useFetch` 등.
+   - `pages/`, `components/`에서 참조됩니다.
+
+6. **services/**
+
+   - API 호출 및 비즈니스 로직을 관리합니다.
+   - 백엔드와의 데이터 통신 로직(API)과 관련된 함수들이 위치하며, `hooks/`에서 주로 참조됩니다.
+   - 예: `userService.js`, `productService.js` 등.
+
+7. **utils/**
+
+   - 공통적으로 사용되는 유틸리티 함수들이 위치합니다.
+   - 예: 날짜 포맷팅, 문자열 변환, API 응답 처리 등.
+   - `services/`, `hooks/`, `components/`에서 참조됩니다.
+
+8. **styles/**
+
+   - 전역 스타일 파일 및 컴포넌트별 스타일 파일이 위치합니다.
+   - CSS 또는 SCSS 파일로 구성되며, 프로젝트 전반에서 사용됩니다.
+   - `components/`, `pages/`, `layouts/`에서 참조됩니다.
+
+9. **assets/**
+   - 정적 리소스를 저장합니다.
+   - 이미지, 폰트, 아이콘과 같은 파일들이 위치합니다.
+   - `components/`, `pages/`, `styles/`에서 참조됩니다.
