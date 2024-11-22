@@ -1,0 +1,55 @@
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    background-color: #00a1b9;
+    overflow: hidden;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar.expanded {
+    width: 200px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    margin: 10px 0;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .icon.hidden {
+    opacity: 0;
+  }
+  
+  .text {
+    display: none;
+    margin-left: 10px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .sidebar.expanded .text {
+    display: inline-block;
+  }
+  
+  .organization-button {
+    margin-top: auto;
+    padding: 10px;
+    background-color: #007c92;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
