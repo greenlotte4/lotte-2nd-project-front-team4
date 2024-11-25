@@ -102,13 +102,13 @@ const LoginForm = () => {
             <label id="login_id_save_label">계정 저장</label>
           </span>
           <div className="register" style={{ alignSelf: "flex-end" }}>
-            <a href="/user/register">회원가입</a>
+            <a href="/terms">회원가입</a>
           </div>
           <div className="id_check" style={{ alignSelf: "flex-end" }}>
-            <a href="/user/findId">아이디 찾기</a>
+            <a href="/findId">아이디 찾기</a>
           </div>
           <div className="pass_check" style={{ alignSelf: "flex-end" }}>
-            <a href="/user/findPass">패스워드 찾기</a>
+            <a href="/findPass">패스워드 찾기</a>
           </div>
         </div>
       </section>

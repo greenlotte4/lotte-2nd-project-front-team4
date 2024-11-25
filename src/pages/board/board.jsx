@@ -3,7 +3,7 @@ import Sidebar from '@/components/common/Slidbar/Slidbar';
 
 export default function Board() {
   const sidebarItems = [
-    { text: '홈', link: '#', icon: 'home-icon.png' },
+    { text: '홈', link: '/main', icon: 'home-icon.png' },
     { text: '게시판', link: '#', icon: 'mail-icon.png' },
     { text: '캘린더', link: '#', icon: 'address-book-icon.png' },
     { text: '자료실', link: '#', icon: 'works-icon.png' },
