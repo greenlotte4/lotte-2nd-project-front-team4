@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../../styles/login/go_style.css";
 import "../../styles/login/go_color_mint.css";
 import "../../styles/login/go_login.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/login/logo.png";
 
 const Header = () => {
   const { i18n } = useTranslation();
