@@ -14,29 +14,6 @@ const FindPass = lazy(() => import('@/pages/user/findPass'));
 const Main = lazy(() => import('@/pages/index'));
 const Chat = lazy(() => import('@/pages/chat/Chat'));
 
-<<<<<<< Updated upstream
-const AppRouter = () => {
-  return (
-    <Routes>
-      <Route path="/a" element={<div>main</div>} />
-      {/* 해당 route 자식은 인증 필요 */}
-      <Route path="/b" element={<PrivateRouter />}>
-        <Route path="mypage" element={<MyPage />} />
-      </Route>
-      <Route path="board" element={<Board />} />
-      <Route path="board/write" element={<Write />} />
-      <Route path="login" element={<Login />} />
-      <Route path="findId" element={<FindId />} />
-      <Route path="findPass" element={<FindPass />} />
-      <Route path="terms" element={<Terms />} />
-      <Route path="register" element={<Register />} />
-      <Route path="Main" element={<Main />} />
-      <Route element={<UserLayout />}>
-        <Route path="chat" element={<Chat />} />
-      </Route>
-      <Route path="/*" element={<div>404</div>} />
-    </Routes>
-=======
 // 새로운 캘린더 관련 라우트 추가
 const CalendarList = lazy(() => import('@/pages/calendar/CalendarList'));
 const CalendarWrite = lazy(() => import('@/pages/calendar/CalendarWrite'));
@@ -53,6 +30,7 @@ const AppRouter = () => {
           <Route path="mypage" element={<MyPage />} />
         </Route>
         <Route path="board" element={<Board />} />
+        <Route path="board/write" element={<Write />} />
         <Route path="login" element={<Login />} />
         <Route path="findId" element={<FindId />} />
         <Route path="findPass" element={<FindPass />} />
@@ -72,7 +50,6 @@ const AppRouter = () => {
         <Route path="/*" element={<div>404</div>} />
       </Routes>
     </Suspense>
->>>>>>> Stashed changes
   );
 };
 

@@ -73,14 +73,14 @@ const LoginForm = () => {
             <input type="checkbox" id="saveLoginId" />
             <label htmlFor="saveLoginId">{t("rememberMe")}</label>
           </span>
-          <div className="login_register" style={{alignSelf: 'flex-end'}}>
-            <a href="/terms">{t("register")}</a>
+          <div className="register" style={{ alignSelf: "flex-end" }}>
+            <a href="/terms">회원가입</a>
           </div>
-          <div className="id_check" style={{alignSelf: 'flex-end'}}>
-            <a href="/findId">{t("findId")}</a>
+          <div className="id_check" style={{ alignSelf: "flex-end" }}>
+            <a href="/findId">아이디 찾기</a>
           </div>
-          <div className="pass_check" style={{alignSelf: 'flex-end'}}>
-            <a href="/findPass">{t("findPass")}</a>
+          <div className="pass_check" style={{ alignSelf: "flex-end" }}>
+            <a href="/findPass">패스워드 찾기</a>
           </div>
         </div>
       </section>
