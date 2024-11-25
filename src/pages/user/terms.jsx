@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../styles/login/terms.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../styles/login/terms.css";
 
 const Terms = () => {
   const [openSections, setOpenSections] = useState({});
@@ -15,15 +15,15 @@ const Terms = () => {
 
   const checkTerms = (event) => {
     event.preventDefault(); // 기본 동작 방지
-    const chk1 = document.getElementById('chk1').checked;
-    const chk2 = document.getElementById('chk2').checked;
-    const chk3 = document.getElementById('chk3').checked;
+    const chk1 = document.getElementById("chk1").checked;
+    const chk2 = document.getElementById("chk2").checked;
+    const chk3 = document.getElementById("chk3").checked;
 
     if (chk1 && chk2 && chk3) {
-      alert('모든 필수 약관에 동의하셨습니다.');
-      navigate('/register'); // register 페이지로 이동
+      alert("모든 필수 약관에 동의하셨습니다.");
+      navigate("/register"); // register 페이지로 이동
     } else {
-      alert('필수 약관에 모두 동의해주세요.');
+      alert("필수 약관에 모두 동의해주세요.");
     }
   };
 
@@ -35,17 +35,17 @@ const Terms = () => {
       <div className="main-wrapper">
         <div className="main-box">
           <section className="terms">
-            <table className={openSections['terms1'] ? 'active' : ''}>
-              <caption onClick={() => toggleContent('terms1')}>
+            <table className={openSections["terms1"] ? "active" : ""}>
+              <caption onClick={() => toggleContent("terms1")}>
                 <span>
                   <span className="must">(필수)</span> 이용약관
                 </span>
                 <span className="toggle-icon">
-                  {openSections['terms1'] ? 'v' : '>'}
+                  {openSections["terms1"] ? "v" : ">"}
                 </span>
               </caption>
               <tbody>
-                {openSections['terms1'] && (
+                {openSections["terms1"] && (
                   <tr>
                     <td>
                       <textarea readOnly>이용약관 내용</textarea>
@@ -60,17 +60,17 @@ const Terms = () => {
                 )}
               </tbody>
             </table>
-            <table className={openSections['terms2'] ? 'active' : ''}>
-              <caption onClick={() => toggleContent('terms2')}>
+            <table className={openSections["terms2"] ? "active" : ""}>
+              <caption onClick={() => toggleContent("terms2")}>
                 <span>
                   <span className="must">(필수)</span> 전자금융 이용약관
                 </span>
                 <span className="toggle-icon">
-                  {openSections['terms2'] ? 'v' : '>'}
+                  {openSections["terms2"] ? "v" : ">"}
                 </span>
               </caption>
               <tbody>
-                {openSections['terms2'] && (
+                {openSections["terms2"] && (
                   <tr>
                     <td>
                       <textarea readOnly>전자금융 이용약관 내용</textarea>
@@ -85,17 +85,17 @@ const Terms = () => {
                 )}
               </tbody>
             </table>
-            <table className={openSections['terms3'] ? 'active' : ''}>
-              <caption onClick={() => toggleContent('terms3')}>
+            <table className={openSections["terms3"] ? "active" : ""}>
+              <caption onClick={() => toggleContent("terms3")}>
                 <span>
                   <span className="must">(필수)</span> 개인정보 수집동의
                 </span>
                 <span className="toggle-icon">
-                  {openSections['terms3'] ? 'v' : '>'}
+                  {openSections["terms3"] ? "v" : ">"}
                 </span>
               </caption>
               <tbody>
-                {openSections['terms3'] && (
+                {openSections["terms3"] && (
                   <tr>
                     <td>
                       <textarea readOnly>개인정보 수집동의 내용</textarea>
@@ -114,7 +114,7 @@ const Terms = () => {
               <button
                 type="button"
                 className="btnCancel"
-                onClick={() => navigate('/login')}
+                onClick={() => navigate("/login")}
               >
                 취소
               </button>
