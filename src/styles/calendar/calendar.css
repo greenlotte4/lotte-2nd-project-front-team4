@@ -1,0 +1,100 @@
+/* 전체 레이아웃 */
+.dashboard {
+  display: flex; /* Flexbox 사용으로 사이드바와 메인 콘텐츠 정렬 */
+  height: 100vh; /* 전체 화면 높이 */
+  overflow: hidden; /* 스크롤 생성을 방지 */
+}
+
+.calendar-main {
+  flex: 1; /* 남은 공간을 캘린더가 차지하도록 설정 */
+  display: flex;
+  flex-direction: column;
+}
+/* 캘린더 사이드바 */
+.calendar-sidebar {
+  width: 300px; /* 사이드바 너비 */
+  background-color: #f8f9fa; /* 연한 회색 배경 */
+  border-right: 1px solid #ddd; /* 사이드바 경계선 */
+  padding: 20px; /* 내부 여백 */
+  box-sizing: border-box; /* 패딩 포함 계산 */
+  overflow: hidden; /* 스크롤 제거 */
+}
+
+.full-calendar {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.full-calendar .fc {
+  height: 100%; /* 캘린더가 화면에 꽉 차게 */
+}
+
+.full-calendar .fc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.full-calendar .fc-toolbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.full-calendar .fc-button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.full-calendar .fc-button:hover {
+  background-color: #1565c0;
+}
+
+.full-calendar .fc-daygrid-day {
+  border: 1px solid #ddd;
+}
+
+.full-calendar .fc-daygrid-event {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.full-calendar .fc-daygrid-event:hover {
+  background-color: #1565c0;
+}
+
+
+/* 일정 등록 페이지 스타일 */
+.calendar-main {
+  flex-grow: 1;
+  padding: 20px; /* 메인 콘텐츠의 내부 여백 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 위쪽 정렬 */
+  background-color: #f8f9fa; /* 메인 배경색 */
+  overflow: hidden; /* 스크롤 제거 */
+
+}
+
+/* 일정 등록 폼 스타일 */
+.calendar-write__form {
+  width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+}
+
+/* 버튼 간격 조정 */
+.calendar-write__form .form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* 버튼 간격 */
+  margin-top: 20px;
+}
