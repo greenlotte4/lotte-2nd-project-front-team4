@@ -1,11 +1,17 @@
-import styled from '@emotion/styled';
+import ChatAside from '@/components/chat/ChatAside/ChatAside';
 import { Aside, Container, Main } from './ChatStyles';
+import { Outlet } from 'react-router-dom';
 
 const Chat = () => {
   return (
     <Container>
-      <Aside></Aside>
-      <Main>sdf</Main>
+      <Aside>
+        <ChatAside />
+      </Aside>
+      <Main>
+        {/* <ChatMain /> */}
+        <Outlet />
+      </Main>
     </Container>
   );
 };

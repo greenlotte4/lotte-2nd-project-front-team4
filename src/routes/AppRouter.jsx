@@ -1,7 +1,10 @@
-import React, { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import PrivateRouter from './AuthRouter';
 import UserLayout from '@/layouts/UserLayout/UserLayout';
+import ChatMain from '@/components/chat/ChatMain/ChatMain';
+import RecentChat from '@/components/chat/ChatMain/RecentChat/RecentChat';
+import RegisterChannel from '@/components/chat/ChatMain/RegisterChannel/RegisterChannel';
 
 const MyPage = lazy(() => import('@/pages'));
 const Board = lazy(() => import('@/pages/board/board'));
@@ -38,7 +41,16 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="Main" element={<Main />} />
         <Route element={<UserLayout />}>
-          <Route path="chat" element={<Chat />} />
+          <Route path="chat" element={<Chat />}>
+            <Route path="home" element={<ChatMain />}>
+              <Route
+                index
+                element={<Navigate to="recentChatting" replace={true} />}
+              />
+              <Route path="recentChatting" element={<RecentChat />} />
+              <Route path="registerChannel" element={<RegisterChannel />} />
+            </Route>
+          </Route>
         </Route>
 
         {/* 캘린더 관련 경로 추가 */}

@@ -136,3 +136,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@supports (height: 100dvh) {
+  html,
+  body,
+  #root {
+    height: 100dvh; /* 최신 브라우저에서는 100dvh 적용 */
+  }
+}
