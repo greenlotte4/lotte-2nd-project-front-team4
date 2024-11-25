@@ -15,18 +15,12 @@ const index = () => {
     <body>
       <div className="dashboard">
         <header className="header">
-          <h1 className="logo" id="advanced_logo">
-            <a href="/main">
-              <img
-                className="logo"
-                src="/resources/images/logo_do_advanced.png"
-                alt="로고"
-              />
-            </a>
-          </h1>
           <Sidebar items={sidebarItems} userButtonText="사용자" />
         </header>
         <main className="main-content">
+          <section style={{justifyItems: 'right'}}>
+            <div >테스트</div>
+          </section>
           <section className="recent-notifications">
             <h2>최근 알림</h2>
             <ul className="notification-list">

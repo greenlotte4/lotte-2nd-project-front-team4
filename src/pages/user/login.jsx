@@ -1,16 +1,25 @@
-import React from "react";
-import "./i18n";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { login } from "../../slices/userSlice"; // Redux 액션 import
+import { postUserLogin } from "../../services/UserService"; // 로그인 API 호출 함수
 import "../../styles/login/go_style.css";
 import "../../styles/login/go_color_mint.css";
 import "../../styles/login/go_login.css";
 import logo from "../../assets/login/logo.png";
+
+const initState = {
+  userId: "", 
+  pass: "",   
+};
 
 const Header = () => {
   const { i18n } = useTranslation();
 
   const handleLanguageChange = (e) => {
     i18n.changeLanguage(e.target.value);
+    console.log(`Language changed to: ${e.target.value}`);
   };
 
   return (
@@ -26,12 +35,42 @@ const Header = () => {
   );
 };
 
+
 const LoginForm = () => {
   const { t } = useTranslation();
+  const [user, setUser] = useState({ ...initState });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const changeHandler = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("Login submitted");
+    console.log("Login data being sent:", user);
+
+    try {
+      const response = await postUserLogin(user);
+      if (response) {
+        console.log("Login successful:", response);
+
+        // Redux 상태 업데이트
+        dispatch(login({
+          username: response.username,
+          role: response.role,
+          accessToken: response.accessToken,
+        }));
+
+        // 메인 페이지로 이동
+        navigate("/main");
+      } else {
+        alert("로그인 실패: 아이디와 비밀번호를 확인하세요.");
+      }
+    } catch (error) {
+      console.error("Login failed:", error.message);
+      alert("로그인 중 오류가 발생했습니다.");
+    }
   };
 
   return (
@@ -40,7 +79,6 @@ const LoginForm = () => {
         <div className="sticker">
           <span className="go" title="groupoffice"></span>
         </div>
-
         <div className="custom_visual">
           <img src={logo} alt="Group Office Logo" />
         </div>
@@ -49,19 +87,23 @@ const LoginForm = () => {
           <div className="login_id">
             <input
               type="text"
-              id="username"
-              name="username"
+              id="userId"
+              name="userId"
+              value={user.userId}
               className="ipt_login login_wide"
               placeholder={t("username")}
+              onChange={changeHandler}
             />
           </div>
           <div className="login_pw">
             <input
               type="password"
-              name="password"
-              id="password"
+              id="pass"
+              name="pass"
+              value={user.pass}
               className="ipt_login"
               placeholder={t("password")}
+              onChange={changeHandler}
             />
           </div>
           <button id="login_submit" className="btn_login" type="submit">
@@ -90,7 +132,6 @@ const LoginForm = () => {
 
 const WakeUpSection = ({ isVisible }) => {
   const { t } = useTranslation();
-
   if (!isVisible) return null;
 
   return (
@@ -121,3 +162,4 @@ const App = () => {
 };
 
 export default App;
+ 
