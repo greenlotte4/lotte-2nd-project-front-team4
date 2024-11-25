@@ -1,0 +1,273 @@
+/* Reset */
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Layout 설정 */
+.layout {
+  display: flex; /* Flexbox 레이아웃 */
+  height: 100vh; /* 전체 화면 높이 */
+}
+
+aside.side {
+  width: 250px; /* 고정된 너비 */
+  background: #f4f4f4; /* 배경색 */
+  border-right: 1px solid #ddd; /* 오른쪽 경계선 */
+  padding: 20px;
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+aside.side .gnb_title h1 {
+  font-size: 22px;
+  line-height: 24px;
+}
+
+aside.side .lnb h1 {
+  padding: 4px 24px;
+  font-size: 14px;
+  color: #333;
+}
+
+aside.side .board-tree li {
+  margin: 10px 0;
+}
+
+aside.side .board-tree a {
+  font-size: 13px;
+  color: #616161;
+}
+
+aside.side .list_action .btn_side2 {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+aside.side .board-tree a:hover {
+  color: #0056b3; /* 마우스를 올렸을 때 색상 */
+}
+
+/* Content 스타일 */
+div.content {
+  flex: 1; /* 남은 공간을 채움 */
+  padding: 20px;
+  background: #fff;
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+/* 공통 Header 스타일 */
+.content-header h1,
+.content_top h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* 게시판 목록 스타일 */
+.board-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.board-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 16px 0;
+}
+
+.board-list .article .category {
+  display: block;
+  font-size: 14px;
+  color: #919191;
+  margin-bottom: 4px;
+}
+
+.board-list .article h2 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.board-list .article .info {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Load More 버튼 스타일 */
+.load-more button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn_wrt {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.article-header {
+  display: flex; /* Flexbox 레이아웃 적용 */
+  justify-content: space-between; /* 공간을 균등 분배 */
+  align-items: center; /* 세로로 가운데 정렬 */
+  margin-top: 5px; /* 상단 간격 */
+}
+
+.article-header h2 {
+  flex: 0 0 auto; /* h2의 크기를 고정 */
+  margin-right: 10px; /* 오른쪽 여백 */
+}
+
+.extra-info {
+  display: flex; /* Flexbox로 정렬 */
+  gap: 15px; /* 각 요소 간 간격 */
+}
+
+.extra-info span {
+  font-size: 14px; /* 텍스트 크기 */
+  color: #666; /* 텍스트 색상 */
+}
+
+/* 글쓰기 페이지 스타일 */
+.go_content {
+  padding: 20px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* 타겟 설정 */
+.target_wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.wfix_large {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Form 스타일 */
+.editor_form {
+  display: flex; /* Flexbox 활성화 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  align-items: center; /* 가로축 중앙 정렬 */
+  justify-content: center; /* 세로축 중앙 정렬 */
+  padding: 20px; /* 내부 여백 */
+  background: #fff; /* 배경색 */
+  border: none; /* 테두리 제거 */
+  border-radius: 10px; /* 모서리 둥글게 */
+  width: 100%; /* 너비 설정 */
+}
+
+.editor_form .form_type th {
+  text-align: left;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.editor_form .form_type td {
+  padding: 10px 0;
+}
+
+.wrap_txt .txt,
+.editor_content {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.editor_content {
+  height: 200px;
+  resize: none;
+  font-size: 13px;
+}
+
+.dd_attach {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.dd_attach .drag_txt {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.wrap_attach ul {
+  margin: 10px 0;
+}
+
+/* 버튼 스타일 */
+.page_action_wrap {
+  display: flex; /* Flexbox 활성화 */
+  justify-content: center; /* 가로축 중앙 정렬 */
+  align-items: center; /* 세로축 중앙 정렬 */
+  margin-top: 20px; /* 상단 여백 */
+}
+
+.page_action_wrap .btn_major,
+.page_action_wrap .btn_minor {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.page_action_wrap .btn_major {
+  background: #007bff;
+  color: #fff;
+}
+
+.page_action_wrap .btn_major:hover {
+  background: #0056b3;
+}
+
+.page_action_wrap .btn_minor {
+  background: #f4f4f4;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.page_action_wrap .btn_minor:hover {
+  background: #ddd;
+}

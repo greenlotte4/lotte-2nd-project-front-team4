@@ -5,6 +5,7 @@ import UserLayout from '@/layouts/UserLayout/UserLayout';
 
 const MyPage = lazy(() => import('@/pages'));
 const Board = lazy(() => import('@/pages/board/board'));
+const Write = lazy(() => import('@/pages/board/write'));
 const Login = lazy(() => import('@/pages/user/login'));
 const Terms = lazy(() => import('@/pages/user/terms'));
 const Register = lazy(() => import('@/pages/user/register'));
@@ -12,7 +13,6 @@ const FindId = lazy(() => import('@/pages/user/findId'));
 const FindPass = lazy(() => import('@/pages/user/findPass'));
 const Main = lazy(() => import('@/pages/index'));
 const Chat = lazy(() => import('@/pages/chat/Chat'));
-
 
 const AppRouter = () => {
   return (
@@ -23,6 +23,7 @@ const AppRouter = () => {
         <Route path="mypage" element={<MyPage />} />
       </Route>
       <Route path="board" element={<Board />} />
+      <Route path="board/write" element={<Write />} />
       <Route path="login" element={<Login />} />
       <Route path="findId" element={<FindId />} />
       <Route path="findPass" element={<FindPass />} />
