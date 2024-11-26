@@ -53,7 +53,6 @@ const CalendarWrite = () => {
       {/* 일정 등록 폼 */}
       <div className="calendar-main">
         <div className="calendar-write__form">
-          <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>일정 등록</h1>
           <EventForm />
         </div>
       </div>
