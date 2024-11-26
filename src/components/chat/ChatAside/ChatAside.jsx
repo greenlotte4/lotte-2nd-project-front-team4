@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { DmListSection } from './ChatAsideStyles';
 import {
   ChatListSection,
@@ -5,14 +6,16 @@ import {
   HeaderSection,
   HeaderTitle,
 } from './ChatAsideStyles';
-import ChannelList from './ChatList/ChannelList';
+import ChannelList from './ChannelList/ChannelList';
 import DmList from './DmList/DmList';
 
 const ChatAside = () => {
   return (
     <div>
       <HeaderSection>
-        <HeaderTitle>채팅</HeaderTitle>
+        <HeaderTitle>
+          <Link to="/chat">채팅</Link>
+        </HeaderTitle>
         <CreateChatButton>채팅방 만들기</CreateChatButton>
         <CreateChatButton>DM 만들기</CreateChatButton>
       </HeaderSection>

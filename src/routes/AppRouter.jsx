@@ -5,6 +5,7 @@ import UserLayout from '@/layouts/UserLayout/UserLayout';
 import ChatMain from '@/components/chat/ChatMain/ChatMain';
 import RecentChat from '@/components/chat/ChatMain/RecentChat/RecentChat';
 import RegisterChannel from '@/components/chat/ChatMain/RegisterChannel/RegisterChannel';
+import ChatRoom from '@/components/chat/ChatRoom/ChatRoom';
 
 const MyPage = lazy(() => import('@/pages'));
 const Board = lazy(() => import('@/pages/board/board'));
@@ -42,6 +43,8 @@ const AppRouter = () => {
         <Route path="Main" element={<Main />} />
         <Route element={<UserLayout />}>
           <Route path="chat" element={<Chat />}>
+            <Route index element={<Navigate to="home" replace />} />
+            <Route path="room/:id" element={<ChatRoom />} />
             <Route path="home" element={<ChatMain />}>
               <Route
                 index
