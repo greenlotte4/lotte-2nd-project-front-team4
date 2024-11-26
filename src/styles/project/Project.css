@@ -84,44 +84,33 @@ div.content {
 }
 
 /* 게시판 목록 스타일 */
-.board-list ul {
+.project-list ul {
   list-style: none;
   padding: 0;
 }
 
-.board-list li {
+.project-list li {
   border-bottom: 1px solid #ddd;
   padding: 16px 0;
 }
 
-.board-list .article .category {
+.project-list .article .category {
   display: block;
   font-size: 14px;
   color: #919191;
   margin-bottom: 4px;
 }
 
-.board-list .article h2 {
+.project-list .article h2 {
   font-size: 18px;
   margin: 5px 0;
 }
 
-.board-list .article .info {
+.project-list .article .info {
   font-size: 12px;
   color: #999;
 }
 
-/* Load More 버튼 스타일 */
-.load-more button {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
 
 .btn_wrt {
   background: #007bff;
@@ -288,4 +277,83 @@ div.content {
 
 .section-header a, .section-header  {
   margin-right: 16px; 
+}
+
+
+
+
+
+.project-container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.gantt-chart h2 {
+  margin-bottom: 10px;
+}
+
+.gantt-chart {
+  margin-top: 20px;
+  width: 100%; /* 부모 요소 너비 100% */
+  overflow-x: auto; /* 가로 스크롤 허용 */
+  padding: 10px;
+}
+
+.gantt-wrapper {
+  width: 100%; /* 내부 Gantt Chart의 너비를 부모에 맞춤 */
+  height: 600px; /* Gantt Chart의 높이를 적절히 설정 */
+  display: block;
+  background: #fff; /* 배경색 설정 */
+  border: 1px solid #ddd; /* 테두리 */
+  border-radius: 4px; /* 모서리 둥글게 */
+}
+
+
+
+
+/* 프로젝트 보드 */
+
+.project-board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.column {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+}
+
+.column h3 {
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+}
+
+.task-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.task-card {
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  cursor: grab;
 }

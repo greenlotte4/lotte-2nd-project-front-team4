@@ -1,45 +1,54 @@
-// src/components/Sidebar/SidebarStyles.js
 import styled from '@emotion/styled';
 
-export const SidebarContainer = styled.nav`
+export const SidebarContainer = styled.div`
   width: ${(props) => (props.isExpanded ? '200px' : '60px')};
-  height: 100vh;
-  background-color: #00a1b9;
-  overflow: hidden;
   transition: width 0.3s ease;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 전체 높이 *
 `;
 
 export const SidebarList = styled.ul`
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  flex-grow: 1;
 `;
 
 export const SidebarItem = styled.li`
-  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 `;
 
-export const Icon = styled.img`
-  width: 24px;
-  height: 24px;
-  display: block;
-  opacity: ${(props) => (props.isExpanded ? '1' : '0')};
-  transition: opacity 0.3s ease;
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; 
+  margin-right: ${(props) => (props.isExpanded ? '10px' : '0')};
+  transition: margin 0.3s ease;
 `;
 
 export const Text = styled.span`
-  display: ${(props) => (props.isExpanded ? 'inline-block' : 'none')};
+  opacity: ${(props) => (props.isExpanded ? '1' : '0')};
+  transition: opacity 0.3s ease;
   margin-left: 10px;
-  font-size: 14px;
-  color: white;
 `;
 
 export const Button = styled.button`
-  margin-top: auto;
-  padding: 10px;
-  background-color: #007c92;
-  color: white;
+    padding: 10px;
   border: none;
+  background-color: #007bff;
+  color: white;
   cursor: pointer;
-  width: 100%;
+  margin-top: auto; /* 자동으로 아래로 밀리게 설정 */
+  border-radius: 4px;
+  text-align: center;
+  &:hover {
+    background-color: #0056b3;
+  }
 `;

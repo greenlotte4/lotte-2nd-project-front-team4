@@ -4,7 +4,7 @@ import {
   SidebarContainer,
   SidebarList,
   SidebarItem,
-  Icon,
+  IconWrapper, // 스타일 컴포넌트를 추가
   Text,
   Button,
 } from './SlidbarStyles';
@@ -28,8 +28,8 @@ const Sidebar = ({ items, userButtonText }) => {
               href={item.link}
               style={{ display: 'flex', alignItems: 'center' }}
             >
-              <Icon src={item.icon} alt={item.text} isExpanded={isExpanded} />
-              <Text isExpanded={isExpanded}>{item.text}</Text>
+              <IconWrapper>{item.icon}</IconWrapper>
+              <Text isExpanded={isExpanded}>{item.text} <style marginleft /></Text>
             </a>
           </SidebarItem>
         ))}

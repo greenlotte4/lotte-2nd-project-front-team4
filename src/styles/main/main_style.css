@@ -265,3 +265,20 @@ table td {
   color: #555;
 }
 
+.section-header{
+  background-color: white;
+  border: none;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.section-header > .user-img{
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.section-header a, .section-header  {
+  margin-right: 16px; 
+}

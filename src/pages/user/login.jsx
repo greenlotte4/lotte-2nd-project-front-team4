@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { login } from "../../slices/userSlice"; // Redux 액션 import
-import { postUserLogin } from "../../services/UserService"; // 로그인 API 호출 함수
+import { login } from "../../slices/userSlice"; 
+import { postUserLogin } from "../../services/UserService"; 
 import "../../styles/login/go_style.css";
 import "../../styles/login/go_color_mint.css";
 import "../../styles/login/go_login.css";
