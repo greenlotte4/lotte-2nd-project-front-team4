@@ -1,6 +1,6 @@
 import Sidebar from '@/components/common/Slidbar/Slidbar';
 import { Outlet } from 'react-router-dom';
-import { Aside, Main } from './UserLayoutStyles';
+import { Aside, Container, Main } from './UserLayoutStyles';
 
 const UserLayout = () => {
   const sidebarItems = [
@@ -14,14 +14,14 @@ const UserLayout = () => {
   ];
 
   return (
-    <>
+    <Container>
       <Aside>
         <Sidebar items={sidebarItems} userButtonText="사용자" />
       </Aside>
       <Main>
         <Outlet />
       </Main>
-    </>
+    </Container>
   );
 };
 
