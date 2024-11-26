@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 ul,
@@ -30,27 +31,30 @@ aside.side {
   box-sizing: border-box; /* 패딩 포함 크기 계산 */
 }
 
-aside.side .gnb_title h1 {
+.side .gnb_title h1 {
   font-size: 22px;
   line-height: 24px;
+  margin-bottom: 20px;
 }
 
-aside.side .lnb h1 {
-  padding: 4px 24px;
-  font-size: 14px;
-  color: #333;
-}
-
-aside.side .board-tree li {
+.side .lnb li {
   margin: 10px 0;
 }
 
-aside.side .board-tree a {
-  font-size: 13px;
+.side .lnb a {
+  font-size: 14px;
   color: #616161;
+  display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-aside.side .list_action .btn_side2 {
+.side .lnb a:hover {
+  background: #ddd;
+  color: #333;
+}
+
+.side .list_action .btn_side2 {
   background: #007bff;
   color: #fff;
   border: none;
@@ -58,29 +62,19 @@ aside.side .list_action .btn_side2 {
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
-  display: block;
-  width: 200px;
-  margin: auto;
+  width: 100%;
   margin-top: 15px;
 }
 
-aside.side .board-tree a:hover {
-  color: #0056b3; /* 마우스를 올렸을 때 색상 */
-}
-
-/* Content 스타일 */
-div.content {
-  flex: 1; /* 남은 공간을 채움 */
-  padding: 20px;
-  background: #fff;
-  box-sizing: border-box; /* 패딩 포함 크기 계산 */
-}
-
-/* 공통 Header 스타일 */
-.content-header h1,
-.content_top h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+/* 고정된 볼드 제목 스타일 */
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 10px; /* 제목 왼쪽 여백 */
+  border-left: 4px solid #007bff; /* 왼쪽에 강조 선 추가 */
 }
 
 /* 게시판 목록 스타일 */
@@ -111,6 +105,181 @@ div.content {
   color: #999;
 }
 
+.board-tree {
+  margin: 0;
+  padding: 0 10px; /* 항목 전체 여백 */
+}
+
+.board-tree li {
+  margin: 10px 0; /* 각 항목 간격 */
+}
+
+.board-tree a {
+  font-size: 14px;
+  color: #616161;
+  text-decoration: none;
+  display: block;
+}
+
+.board-tree a:hover {
+  color: #0056b3; /* 마우스를 올렸을 때 색상 */
+  text-decoration: underline; /* 강조 */
+}
+
+div.content {
+  flex: 1; /* 남은 공간을 채움 */
+  padding: 20px;
+  background: #fff;
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+/* 공통 Header 스타일 */
+.content-header h1,
+.content_top h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.article-header {
+  display: flex; /* Flexbox 레이아웃 적용 */
+  justify-content: space-between; /* 공간을 균등 분배 */
+  align-items: center; /* 세로로 가운데 정렬 */
+  margin-bottom: 20px;
+}
+
+.article-header h2 {
+  font-size: 20px;
+}
+
+.extra-info {
+  display: flex; /* Flexbox로 정렬 */
+  gap: 15px; /* 각 요소 간 간격 */
+}
+
+.extra-info span {
+  font-size: 14px; /* 텍스트 크기 */
+  color: #666; /* 텍스트 색상 */
+}
+
+/* Search 스타일 */
+.combine_search {
+  margin-bottom: 20px;
+}
+
+.search_wrap {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.search_wrap select,
+.search_wrap input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn_search {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn_search:hover {
+  background-color: #0056b3;
+}
+
+/* 테이블 스타일 */
+.board_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.board_table th,
+.board_table td {
+  padding: 12px 15px; /* 여백 추가 */
+  text-align: center; /* 텍스트 중간 정렬 */
+  vertical-align: middle; /* 세로축 중간 정렬 */
+}
+
+/* 헤더 스타일 */
+.board_table thead th {
+  background-color: #f9f9f9; /* 헤더 배경색 */
+  font-weight: bold;
+  color: #555;
+  border-bottom: 2px solid #ddd; /* 헤더 하단에만 선 */
+  border-top: 2px solid #ddd;
+}
+
+/* 행 스타일 */
+.board_table tbody tr {
+  background-color: #fff; /* 기본 배경색 */
+}
+
+.board_table tbody tr:nth-child(even) {
+  background-color: #f4f4f4; /* 짝수 행 배경색 */
+}
+
+.board_table tbody tr:hover {
+  background-color: #e6f7ff; /* 행 마우스오버 효과 */
+}
+
+/* tbody 하단 줄 */
+.board_table tbody:last-of-type tr:last-child td {
+  border-bottom: 2px solid #ddd; /* tbody 마지막 행의 하단에만 선 */
+}
+
+/* 링크 스타일 */
+.board_table a {
+  color: #007bff; /* 링크 색상 */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.board_table a:hover {
+  text-decoration: underline;
+}
+
+/* 체크박스 크기 조정 */
+.board_table input[type='checkbox'] {
+  transform: scale(1.2); /* 체크박스 크기 */
+  cursor: pointer; /* 포인터 커서 */
+}
+
+/* Pagination 스타일 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination .page,
+.pagination .prev_page,
+.pagination .next_page {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: #f4f4f4;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination .page.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.pagination .prev_page:hover,
+.pagination .next_page:hover,
+.pagination .page:hover {
+  background: #ddd;
+}
+
 /* Load More 버튼 스타일 */
 .load-more button {
   width: 100%;
@@ -135,49 +304,6 @@ div.content {
   width: 200px;
   margin: auto;
   margin-top: 15px;
-}
-
-.article-header {
-  display: flex; /* Flexbox 레이아웃 적용 */
-  justify-content: space-between; /* 공간을 균등 분배 */
-  align-items: center; /* 세로로 가운데 정렬 */
-  margin-top: 5px; /* 상단 간격 */
-}
-
-.article-header h2 {
-  flex: 0 0 auto; /* h2의 크기를 고정 */
-  margin-right: 10px; /* 오른쪽 여백 */
-}
-
-.extra-info {
-  display: flex; /* Flexbox로 정렬 */
-  gap: 15px; /* 각 요소 간 간격 */
-}
-
-.extra-info span {
-  font-size: 14px; /* 텍스트 크기 */
-  color: #666; /* 텍스트 색상 */
-}
-
-/* 글쓰기 페이지 스타일 */
-.go_content {
-  padding: 20px;
-  background: #f9f9f9;
-  box-sizing: border-box;
-}
-
-/* 타겟 설정 */
-.target_wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.wfix_large {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 /* Form 스타일 */
@@ -272,20 +398,63 @@ div.content {
   background: #ddd;
 }
 
-.section-header{
-  background-color: white;
-  border: none;
+/* write */
+/* 글쓰기 페이지 스타일 */
+.go_content {
+  padding: 20px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.add-board-form {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.add-board-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.add-board-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-board-form .form-actions {
   display: flex;
-  justify-content: right;
-  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.section-header > .user-img{
-  width: 30px;
-  object-fit: cover;
-  border-radius: 50%;
+.add-board-form .form-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.section-header a, .section-header  {
-  margin-right: 16px; 
+.add-board-form .form-actions button[type='submit'] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.add-board-form .form-actions button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+.add-board-form .form-actions button[type='button'] {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.add-board-form .form-actions button[type='button']:hover {
+  background-color: #ddd;
 }

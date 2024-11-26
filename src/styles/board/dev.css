@@ -1,0 +1,522 @@
+/* Reset */
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Layout */
+.page,
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+aside.side {
+  width: 250px;
+  background: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.side .title,
+.side .gnb_title h1 {
+  font-size: 22px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.side .board-tree,
+.side .lnb {
+  margin: 10px;
+  padding: 0 10px;
+}
+
+.side .board-tree li,
+.side .lnb li {
+  margin-top: 10px;
+}
+
+.side .board-tree a,
+.side .lnb a {
+  font-size: 14px;
+  color: #616161;
+  display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.side .board-tree a:hover,
+.side .lnb a:hover {
+  background: #ddd;
+  color: #333;
+}
+
+.side .list-action .btn-add-board,
+.side .list_action .btn_side2 {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Header */
+.header {
+  padding: 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header .title,
+.content-header h1,
+.content_top h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.header-meta,
+.article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-meta .subtitle,
+.article-header h2 {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.header-meta .info span,
+.extra-info span {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+
+/* Actions and Search - Horizontal Layout */
+.toolbar-and-search {
+  display: flex;
+  justify-content: space-between; /* 좌우로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+.actions {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px; /* 액션 버튼 간격 */
+}
+
+.actions .action {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.actions .action .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-size: cover;
+}
+
+.actions .write .icon {
+  background-image: url('/path-to-icons/write-icon.png');
+}
+
+.actions .delete .icon {
+  background-image: url('/path-to-icons/delete-icon.png');
+}
+
+.actions .list .icon {
+  background-image: url('/path-to-icons/list-icon.png');
+}
+
+.actions .print .icon {
+  background-image: url('/path-to-icons/print-icon.png');
+}
+
+.actions .warning {
+  color: #d9534f;
+}
+
+/* Search */
+.combine_search {
+  margin: 0; /* 상단 여백 제거 */
+}
+
+.search_wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search_wrap select,
+.search_wrap input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn_search {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn_search:hover {
+  background-color: #0056b3;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* Detail */
+.detail,
+.board-list {
+  margin-bottom: 20px;
+  height: 50%;
+}
+
+.detail-header .comment-count {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.detail-view,
+.article {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.meta,
+.article .info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.meta .author {
+  font-weight: bold;
+}
+
+/* Reply List */
+.reply-list {
+  margin-top: 20px;
+  border-top: 1px solid #ddd; /* 리스트 상단 경계선 */
+  padding-top: 20px; /* 경계선과 내용 간 간격 */
+}
+
+.reply-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reply-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd; /* 댓글 개별 경계선 */
+  border-radius: 5px;
+  background: #f9f9f9; /* 댓글 배경색 */
+}
+
+.reply-content {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.5; /* 가독성을 위한 줄 간격 */
+}
+
+/* Reply Actions */
+.reply-actions {
+  display: flex;
+  gap: 10px; /* 버튼 간격 */
+  justify-content: flex-end; /* 버튼을 오른쪽 정렬 */
+}
+
+.reply-actions .button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.reply-actions .button:hover {
+  color: #0056b3;
+  text-decoration: underline; /* 호버 시 강조 */
+}
+
+/* Reply Create */
+.reply-create {
+  margin-top: 20px;
+}
+
+.reply-create .form-wrap {
+  display: flex; /* Flexbox로 정렬 */
+  align-items: center; /* 세로축 중앙 정렬 */
+}
+
+.reply-create .textarea-wrap {
+  position: relative;
+  flex: 1; /* 공간을 채움 */
+}
+
+.reply-create .input {
+  width: 100%;
+  padding-right: 60px; /* 버튼 공간 확보 */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: none;
+  height: 40px;
+}
+
+.reply-create .button.submit {
+  position: absolute;
+  right: 10px; /* 입력창 오른쪽에 버튼 위치 */
+  top: 43%; /* 수직 중앙 정렬 */
+  transform: translateY(-50%); /* 중앙 위치 보정 */
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.reply-create .button.submit:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.btn_wrt {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+/* file */
+.file-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-list .file-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.file-list .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: cover;
+}
+
+.file-list .icon.pdf {
+  background-image: url('/path-to-icons/pdf-icon.png');
+}
+
+.file-list .name a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.file-list .name a:hover {
+  text-decoration: underline;
+}
+
+.file-list .size {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+.file-list .btn-download {
+  margin-left: auto;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-list .btn-download:hover {
+  background-color: #0056b3;
+}
+
+/* Detail Section */
+.detail {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fdfdfd; /* 배경색 추가 */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* 부드러운 모서리 */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+}
+
+.detail-header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-header .comment-count {
+  font-size: 14px;
+  color: #007bff;
+  background-color: #eef5ff;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.meta {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  gap: 20px; /* 요소 간 간격 */
+}
+
+.meta .author {
+  font-weight: bold;
+}
+
+.detail-view {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Attachments Section */
+.attachments {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-list .file-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.file-list .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: cover;
+}
+
+.file-list .icon.pdf {
+  background-image: url('/path-to-icons/pdf-icon.png');
+}
+
+.file-list .name a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.file-list .name a:hover {
+  text-decoration: underline;
+}
+
+.file-list .size {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+.file-list .btn-download {
+  margin-left: auto;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-list .btn-download:hover {
+  background-color: #0056b3;
+}
+
+#boardContent {
+  margin-top: 20px;
+}
+
+/* 글 CRUD  */
+.text-new {
+  margin-left: 5px;
+}
+.text-delete {
+  margin-left: 5px;
+}
+.text-list {
+  margin-left: 5px;
+}
+.text-copy {
+  margin-left: 5px;
+}

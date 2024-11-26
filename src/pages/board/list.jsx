@@ -21,6 +21,7 @@ export default function Board() {
     console.log(`게시판 이름: ${boardName}`);
     setShowAddBoardForm(false);
   };
+
   const sidebarItems = [
     { text: '홈', link: '/main', icon: 'home-icon.png' },
     { text: '게시판', link: '/board', icon: 'mail-icon.png' },
@@ -32,7 +33,7 @@ export default function Board() {
   ];
 
   return (
-    <body
+    <div
       id="main"
       data-role="main"
       data-app-name="board"
@@ -52,7 +53,6 @@ export default function Board() {
             </h1>
             <Sidebar items={sidebarItems} userButtonText="사용자" />
           </header>
-          {/* 유지되는 기존 내용 */}
           <aside className="side">
             <section className="gnb_title">
               <h1>
@@ -92,7 +92,6 @@ export default function Board() {
                 </li>
               </ul>
             </section>
-
             <div className="list_action">
               <button className="btn_side2" onClick={toggleAddBoardForm}>
                 게시판 추가
@@ -121,48 +120,88 @@ export default function Board() {
               )}
             </div>
           </aside>
-
           {/* 새로운 내용 추가 */}
-          <main className="content" style={{ width: '50%', padding: '30px' }}>
+          <div className="content">
             <header className="content-header">
-              <h1>게시판 홈</h1>
+              <h1 className="content_top">공지사항(데모)</h1>
+              <div className="article-header">
+                <h2>게시물 목록</h2>
+                <div className="extra-info">
+                  <span>운영자: 조수빈</span>
+                  <span>LION 공지 게시판</span>
+                </div>
+              </div>
             </header>
-            <section className="board-list" style={{ padding: '10px' }}>
-              <ul>
-                <li>
-                  <div className="article">
-                    <span className="category">다우그룹 &gt; 사내 공지</span>
-                    <div className="article-header">
-                      <h2>공지</h2>
-                      <div className="extra-info">
-                        <span className="views">조회수: 123</span>
-                        <span className="author">김상후 대표이사</span>
-                        <span className="time">5시간 전</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="article">
-                    <span className="category">다우그룹 &gt; 사내 공지</span>
-                    <div className="article-header">
-                      <h2>공지</h2>
-                      <div className="extra-info">
-                        <span className="views">조회수: 123</span>
-                        <span className="author">김상후 대표이사</span>
-                        <span className="time">5시간 전</span>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <div className="load-more">
-              <button>더 보기</button>
+            <div className="combine_search">
+              <div className="search_wrap">
+                <select className="search_op" id="searchType">
+                  <option value="appSearch">게시판</option>
+                  <option value="title">제목</option>
+                  <option value="content">내용</option>
+                  <option value="writer">글쓴이</option>
+                </select>
+                <input
+                  className="c_search"
+                  type="text"
+                  id="simpleInput"
+                  placeholder="검색"
+                />
+                <button className="btn_search" id="simpleSearch">
+                  검색
+                </button>
+              </div>
             </div>
-          </main>
+            <div id="postContents">
+              <table className="board_table">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" id="checkAll" />
+                    </th>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>1</td>
+                    <td>
+                      <a href="#">공지사항 제목</a>
+                    </td>
+                    <td>운영자</td>
+                    <td>2024-11-26</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>2</td>
+                    <td>
+                      <a href="#">공지사항 제목</a>
+                    </td>
+                    <td>운영자</td>
+                    <td>2024-11-25</td>
+                    <td>15</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="pagination">
+                <button className="prev_page">이전</button>
+                <button className="page active">1</button>
+                <button className="page">2</button>
+                <button className="next_page">다음</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 }

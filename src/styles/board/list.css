@@ -1,0 +1,231 @@
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.side {
+  width: 250px;
+  background: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.side .gnb_title h1 {
+  font-size: 22px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.side .lnb li {
+  margin: 10px 0;
+}
+
+.side .lnb a {
+  font-size: 14px;
+  color: #616161;
+  display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.side .lnb a:hover {
+  background: #ddd;
+  color: #333;
+}
+
+.side .list_action .btn_side2 {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* Header */
+.content-header h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.article-header h2 {
+  font-size: 20px;
+}
+
+.extra-info span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Search */
+.combine_search {
+  margin-bottom: 20px;
+}
+
+.search_wrap {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.search_wrap select,
+.search_wrap input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn_search {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn_search:hover {
+  background-color: #0056b3;
+}
+
+/* Table */
+/* .board_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.board_table th,
+.board_table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.board_table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.board_table a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.board_table a:hover {
+  text-decoration: underline;
+} */
+
+/* 테이블 스타일 */
+.board_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.board_table th,
+.board_table td {
+  padding: 12px 15px; /* 여백 추가 */
+  text-align: center; /* 텍스트 중간 정렬 */
+  vertical-align: middle; /* 세로축 중간 정렬 */
+}
+
+/* 헤더 스타일 */
+.board_table thead th {
+  background-color: #f9f9f9; /* 헤더 배경색 */
+  font-weight: bold;
+  color: #555;
+  border-bottom: 2px solid #ddd; /* 헤더 하단에만 선 */
+  border-top: 2px solid #ddd;
+}
+
+/* 행 스타일 */
+.board_table tbody tr {
+  background-color: #fff; /* 기본 배경색 */
+}
+
+.board_table tbody tr:nth-child(even) {
+  background-color: #f4f4f4; /* 짝수 행 배경색 */
+}
+
+.board_table tbody tr:hover {
+  background-color: #e6f7ff; /* 행 마우스오버 효과 */
+}
+
+/* tbody 하단 줄 */
+.board_table tbody:last-of-type tr:last-child td {
+  border-bottom: 2px solid #ddd; /* tbody 마지막 행의 하단에만 선 */
+}
+
+/* 링크 스타일 */
+.board_table a {
+  color: #007bff; /* 링크 색상 */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.board_table a:hover {
+  text-decoration: underline;
+}
+
+/* 체크박스 크기 조정 */
+.board_table input[type='checkbox'] {
+  transform: scale(1.2); /* 체크박스 크기 */
+  cursor: pointer; /* 포인터 커서 */
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination .page,
+.pagination .prev_page,
+.pagination .next_page {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: #f4f4f4;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination .page.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.pagination .prev_page:hover,
+.pagination .next_page:hover,
+.pagination .page:hover {
+  background: #ddd;
+}
