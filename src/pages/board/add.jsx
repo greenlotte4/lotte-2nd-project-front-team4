@@ -85,52 +85,29 @@ export default function Writer() {
                 </li>
               </ul>
             </section>
+
+            <div className="list_action">
+              <button className="btn_side2">게시판 추가</button>
+            </div>
           </aside>
 
           {/* 새로운 작성 폼 추가 */}
           <main className="content" style={{ width: '70%', padding: '30px' }}>
             <header className="content-header">
-              <h1>게시판 홈</h1>
+              <h1>게시판 추가</h1>
             </header>
 
             <div className="go_content" id="content">
               <header className="content_top">
                 <h1>
-                  <span id="title" className="txt" title="글쓰기">
-                    글쓰기
+                  <span id="title" className="txt" title="게시판 추가">
+                    게시판 추가
                   </span>
                   <span className="meta"></span>
                 </h1>
               </header>
               <div className="content_page go_renew">
                 <div className="target_wrap">
-                  <span className="spacer"></span>
-                  <span className="txt">To.</span>
-                  <span id="deptList">
-                    <select id="dept_select" className="wfix_large">
-                      <option value="10" data-ownertype="Department">
-                        [부서]다우그룹
-                      </option>
-                      <option value="10" data-ownertype="Company">
-                        전사게시판
-                      </option>
-                    </select>
-                    <span id="board_select_wrap">
-                      <select id="select_board" className="wfix_large">
-                        <option
-                          value="359"
-                          data-bbstype="CLASSIC"
-                          data-headerflag="false"
-                          data-headerrequiredflag="false"
-                        >
-                          1f
-                        </option>
-                      </select>
-                      <input type="hidden" id="writePostId" value="" />
-                      <input type="hidden" id="writeType" value="" />
-                      <span id="board_header_wrap"></span>
-                    </span>
-                  </span>
                   <input type="hidden" name="currentBoard" value="359" />
                 </div>
                 <form id="classicWriteWrap" className="editor_form">
@@ -158,7 +135,7 @@ export default function Writer() {
                         </tr>
                         <tr>
                           <th>
-                            <span className="title">내용</span>
+                            <span className="title">설명</span>
                           </th>
                           <td>
                             <textarea
@@ -167,37 +144,39 @@ export default function Writer() {
                             ></textarea>
                           </td>
                         </tr>
-                        <tr id="attachPart">
+                        <tr>
                           <th>
-                            <span className="title">파일 첨부</span>
+                            <span className="title">비공개 설정</span>
                           </th>
                           <td>
-                            <div id="dropZone" className="dd_attach">
-                              <p className="drag_txt">
-                                이 곳에 파일을 드래그 하세요.
-                              </p>
-                              <div className="area_txt">
-                                <span className="ic_attach ic_upload"></span>
-                                <span className="msg">
-                                  이 곳에 파일을 드래그 하세요. 또는
-                                  <span className="btn_file">
-                                    <span className="txt">파일선택</span>
-                                    <input
-                                      type="file"
-                                      name="file"
-                                      title="파일선택"
-                                      multiple
-                                    />
-                                  </span>
-                                  <span id="total_size" className="size">
-                                    ( 0MB )
-                                  </span>
-                                </span>
-                              </div>
-                              <div className="wrap_attach">
-                                <ul className="file_wrap" id="fileWrap"></ul>
-                                <ul className="img_wrap" id="imgWrap"></ul>
-                              </div>
+                            <span className="wrap_option">
+                              <input
+                                type="radio"
+                                id="publicFlag1"
+                                name="publicFlag"
+                                value="true"
+                              />
+                              <label htmlFor="publicFlag1">공개</label>
+                            </span>
+                            <span className="horspace1"></span>
+                            <span className="wrap_option">
+                              <input
+                                type="radio"
+                                id="publicFlag0"
+                                name="publicFlag"
+                                value="false"
+                                defaultChecked
+                              />
+                              <label htmlFor="publicFlag0">비공개</label>
+                            </span>
+                            <div
+                              id="publicFlagOption"
+                              style={{ display: 'none' }}
+                            >
+                              <div
+                                className="option_display"
+                                id="publicFlagOptionTable"
+                              ></div>
                             </div>
                           </td>
                         </tr>

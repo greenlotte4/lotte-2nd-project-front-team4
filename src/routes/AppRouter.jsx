@@ -9,6 +9,10 @@ import ChatRoom from '@/components/chat/ChatRoom/ChatRoom';
 
 const MyPage = lazy(() => import('@/pages'));
 const Board = lazy(() => import('@/pages/board/board'));
+const List = lazy(() => import('@/pages/board/list'));
+const Write = lazy(() => import('@/pages/board/write'));
+const View = lazy(() => import('@/pages/board/view'));
+const Add = lazy(() => import('@/pages/board/add'));
 const Login = lazy(() => import('@/pages/user/login'));
 const Terms = lazy(() => import('@/pages/user/terms'));
 const Register = lazy(() => import('@/pages/user/register'));
@@ -35,6 +39,10 @@ const AppRouter = () => {
           <Route path="mypage" element={<MyPage />} />
         </Route>
         <Route path="board" element={<Board />} />
+        <Route path="board/list" element={<List />} />
+        <Route path="board/write" element={<Write />} />
+        <Route path="board/view" element={<View />} />
+        <Route path="board/add" element={<Add />} />
         <Route path="login" element={<Login />} />
         <Route path="findId" element={<FindId />} />
         <Route path="findPass" element={<FindPass />} />
