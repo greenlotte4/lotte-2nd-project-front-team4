@@ -17,6 +17,8 @@ const FindId = lazy(() => import('@/pages/user/findId'));
 const FindPass = lazy(() => import('@/pages/user/findPass'));
 const Main = lazy(() => import('@/pages/index'));
 const Chat = lazy(() => import('@/pages/chat/Chat'));
+const Project = lazy(() => import('@/pages/project/Project'));
+const ProjectBoard = lazy(() => import('@/pages/project/ProjectBoard'));
 
 // 새로운 캘린더 관련 라우트 추가
 const CalendarList = lazy(() => import('@/pages/calendar/CalendarList'));
@@ -55,9 +57,10 @@ const AppRouter = () => {
             </Route>
           </Route>
         </Route>
-
+        <Route path="project" element={<Project />} />
+        <Route path="project/board" element={<ProjectBoard />} />
         {/* 캘린더 관련 경로 추가 */}
-        <Route path="calendar/list" element={<CalendarList />} />
+        <Route path="calendar" element={<CalendarList />} />
         <Route path="calendar/write" element={<CalendarWrite />} />
         <Route path="calendar/modify" element={<CalendarModify />} />
         <Route path="calendar/setting" element={<CalendarSetting />} />

@@ -20,6 +20,4 @@ document.addEventListener("DOMContentLoaded", function () {
       boardList.style.maxHeight = `${maxHeight}px`;
       boardList.style.overflowY = "auto"; 
     }
-
-    
   });
