@@ -38,6 +38,7 @@ const AppRouter = () => {
         <Route path="/b" element={<PrivateRouter />}>
           <Route path="mypage" element={<MyPage />} />
         </Route>
+        <Route path="/" element={<Navigate to="/main" replace={true} />} />
         <Route path="board" element={<Board />} />
         <Route path="board/list" element={<List />} />
         <Route path="board/write" element={<Write />} />

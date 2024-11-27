@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import {
   MessageMainContainer,
   MessageInputSection,
@@ -9,8 +10,17 @@ import {
 import MessageInput from './MessageInput/MessageInput';
 import MessageList from './MessageList/MessageList';
 import RoomMemberList from './RoomMember/RoomMemberList';
+import RoomMemberAddModal from '@/components/modal/RoomMemberAddModal/RoomMemberAddModal';
+import { useOpenModal } from '@/utils/store';
 
 const ChatRoom = () => {
+  const isOpenMemberAddModal = useOpenModal(
+    (state) => state.isOpenMemberAddModal
+  );
+  const CloseMemberAddModal = useOpenModal(
+    (state) => state.CloseMemberAddModal
+  );
+
   return (
     <RoomContainer>
       <RoomTitle>채팅방 A</RoomTitle>
@@ -25,6 +35,10 @@ const ChatRoom = () => {
       <MessageInputSection>
         <MessageInput />
       </MessageInputSection>
+      <RoomMemberAddModal
+        isOpen={isOpenMemberAddModal}
+        closeModal={CloseMemberAddModal}
+      />
     </RoomContainer>
   );
 };

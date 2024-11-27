@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import RoomMemberListItem from './RoomMemberListItem/RoomMemberListItem';
 import { CustomScroll } from 'react-custom-scroll';
+import { useOpenModal } from '@/utils/store';
 const RoomMemberContainer = styled.div`
   height: 100%;
   border: 1px solid #c2c2c2;
@@ -48,9 +49,11 @@ const MemberSection = styled.div`
 `;
 
 const RoomMemberList = () => {
+  const OpenMemberAddModal = useOpenModal((state) => state.OpenMemberAddModal);
+
   return (
     <RoomMemberContainer>
-      <MemberAddButton>
+      <MemberAddButton onClick={OpenMemberAddModal}>
         <MemberIconSection>
           <AiOutlineUserAdd
             style={{ width: '70%', height: '70%', color: '#1264a3' }}
