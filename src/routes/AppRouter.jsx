@@ -7,21 +7,24 @@ import RecentChat from '@/components/chat/ChatMain/RecentChat/RecentChat';
 import RegisterChannel from '@/components/chat/ChatMain/RegisterChannel/RegisterChannel';
 import ChatRoom from '@/components/chat/ChatRoom/ChatRoom';
 
-const MyPage = lazy(() => import('@/pages'));
+
+const MyPage = lazy(() => import('@/pages/main'));
 const Board = lazy(() => import('@/pages/board/board'));
 const List = lazy(() => import('@/pages/board/list'));
 const Write = lazy(() => import('@/pages/board/write'));
 const View = lazy(() => import('@/pages/board/view'));
 const Add = lazy(() => import('@/pages/board/add'));
+const Update = lazy(() => import('@/pages/board/Update'));
 const Login = lazy(() => import('@/pages/user/login'));
 const Terms = lazy(() => import('@/pages/user/terms'));
 const Register = lazy(() => import('@/pages/user/register'));
 const FindId = lazy(() => import('@/pages/user/findId'));
 const FindPass = lazy(() => import('@/pages/user/findPass'));
-const Main = lazy(() => import('@/pages/index'));
+const Main = lazy(() => import('@/pages/main/index'));
 const Chat = lazy(() => import('@/pages/chat/Chat'));
 const Project = lazy(() => import('@/pages/project/Project'));
 const ProjectBoard = lazy(() => import('@/pages/project/ProjectBoard'));
+const FileBox = lazy(()=>import("@/pages/filebox/FileLibrary"))
 
 // 새로운 캘린더 관련 라우트 추가
 const CalendarList = lazy(() => import('@/pages/calendar/CalendarList'));
@@ -43,12 +46,14 @@ const AppRouter = () => {
         <Route path="board/write" element={<Write />} />
         <Route path="board/view" element={<View />} />
         <Route path="board/add" element={<Add />} />
+        <Route path="board/update" element={<Update />} />
         <Route path="login" element={<Login />} />
         <Route path="findId" element={<FindId />} />
         <Route path="findPass" element={<FindPass />} />
         <Route path="terms" element={<Terms />} />
         <Route path="register" element={<Register />} />
         <Route path="Main" element={<Main />} />
+        <Route path='drive' element={<FileBox />}/>
         <Route element={<UserLayout />}>
           <Route path="chat" element={<Chat />}>
             <Route index element={<Navigate to="home" replace />} />

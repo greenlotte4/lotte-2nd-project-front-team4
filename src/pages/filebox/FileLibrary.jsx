@@ -1,3 +1,11 @@
+import { FaHome } from "react-icons/fa";
+import { AiOutlineMail } from 'react-icons/ai';
+import { BsCalendar } from 'react-icons/bs'; 
+import { BiBookBookmark } from 'react-icons/bi'; 
+import { FaUsers } from 'react-icons/fa'; 
+import { RiProjectorLine } from 'react-icons/ri'; 
+import { MdChat } from 'react-icons/md';
+
 import React, { useState } from "react";
 import {
   Box,
@@ -257,13 +265,13 @@ const FileLibrary = () => {
     >
       <Sidebar
        items={[
-        { text: "홈", link: "/", icon: <FolderIcon />, style: { color: "#FFFFFF" } },
-        { text: "게시판", link: "/board", icon: <InsertDriveFileIcon />, style: { color: "#FFFFFF" } },
-        { text: "캘린더", link: "/calendar", icon: <InsertDriveFileIcon />, style: { color: "#FFFFFF" } },
-        { text: "자료실", link: "/storage", icon: <FolderIcon />, style: { color: "#FFFFFF" } },
-        { text: "커뮤니티", link: "/community", icon: <InsertDriveFileIcon />, style: { color: "#FFFFFF" } },
-        { text: "프로젝트", link: "/project", icon: <FolderIcon />, style: { color: "#FFFFFF" } },
-        { text: "채팅", link: "/chat", icon: <InsertDriveFileIcon />, style: { color: "#FFFFFF" } },
+        { text: '홈', link: '/main', icon: <FaHome /> },
+        { text: '게시판', link: '/board', icon: <AiOutlineMail /> },
+        { text: '캘린더', link: '/calendar', icon: <BsCalendar /> },
+        { text: '자료실', link: '/drive', icon: <BiBookBookmark /> },
+        { text: '커뮤니티', link: '/community', icon: <FaUsers /> },
+        { text: '프로젝트', link: '/project', icon: <RiProjectorLine /> },
+        { text: '채팅', link: '/chat', icon: <MdChat /> },
       ]}
       />
       <Box sx={{ flexGrow: 1, padding: "20px" }}>
