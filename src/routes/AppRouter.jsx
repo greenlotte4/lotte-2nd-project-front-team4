@@ -82,7 +82,7 @@ const AppRouter = () => {
         {/* 관리자 라우트 */}
 
         <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Navigate to="home" replace />} />{' '}
+          <Route index element={<Navigate to="home" replace />} />
           {/* 기본 경로 */}
           <Route path="home" element={<Home />} />
           <Route path="community/all" element={<CommunityAll />} />

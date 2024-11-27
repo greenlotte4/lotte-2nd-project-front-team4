@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../../styles/admin/admin.css';
+import styles from '@styles/admin/admin.module.css';
 
 const Sidebar = () => {
   const location = useLocation();
@@ -12,17 +12,18 @@ const Sidebar = () => {
     { label: '게시판 관리', path: '/admin/board/setting' },
     { label: '통합 유저 관리', path: '/admin/my/member' },
   ];
+
   return (
-    <div className="sidebar">
-      <h1 className="sidebar-title">관리자</h1>
-      <h2 className="sidebar-section-title">Management</h2>
-      <ul className="sidebar-menu">
+    <div className={styles.sidebar}>
+      <h1 className={styles['sidebar-title']}>관리자</h1>
+      <h2 className={styles['sidebar-section-title']}>Management</h2>
+      <ul className={styles['sidebar-menu']}>
         {menuItems.map((item) => (
-          <li key={item.path} className="sidebar-item">
+          <li key={item.path} className={styles['sidebar-item']}>
             <Link
               to={item.path}
-              className={`sidebar-link ${
-                location.pathname === item.path ? 'active' : ''
+              className={`${styles['sidebar-link']} ${
+                location.pathname === item.path ? styles['active'] : ''
               }`}
             >
               {item.label}

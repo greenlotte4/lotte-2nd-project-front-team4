@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '@styles/admin/admin.module.css';
 
 const AdminServiceInfo = () => {
   const serviceInfo = {
@@ -14,9 +15,9 @@ const AdminServiceInfo = () => {
   };
 
   return (
-    <div className="service-info">
-      <h2>서비스 정보</h2>
-      <div className="info-grid">
+    <div className={styles['service-info']}>
+      <h2 className={styles['service-info-title']}>서비스 정보</h2>
+      <div className={styles['info-grid']}>
         <div>
           <strong>사이트명:</strong> {serviceInfo.siteName}
         </div>
