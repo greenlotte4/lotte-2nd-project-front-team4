@@ -18,14 +18,24 @@ export const RoomTitle = styled.h1`
 `;
 
 export const MessageListSection = styled.section`
-  flex: 1;
   padding: 12px;
+  flex: 1;
+`;
+export const RoomMemberSection = styled.section`
+  padding: 12px;
+  padding-left: 0;
+  width: 300px;
+`;
+export const MessageMainContainer = styled.section`
+  flex: 1;
   padding-bottom: 0px;
   min-height: 0;
   min-width: 0;
+  display: flex;
 `;
 
 export const MessageInputSection = styled.section`
   min-height: 80px;
   padding: 12px;
+  padding-top: 0;
 `;

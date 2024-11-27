@@ -5,6 +5,7 @@ const MessageContainer = styled.div`
   padding: 8px 20px;
   display: flex;
   gap: 8px;
+  background-color: transparent;
 
   &:hover {
     background-color: #f1f1f1;

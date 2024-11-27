@@ -1,0 +1,111 @@
+/* 전체 사이드바 스타일 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px; /* 기본 글씨 크기 */
+  color: #424242; /* 글씨 색상 */
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #212121; /* 다크 그레이 배경 */
+  padding: 20px;
+  height: 100vh;
+  color: #ffffff; /* 흰색 글씨 */
+  font-family: 'Arial', sans-serif;
+}
+
+/* 관리자 제목 스타일 */
+.sidebar-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ffffff; /* 흰색 글씨 */
+}
+
+/* 메뉴 섹션 제목 스타일 */
+.sidebar-section-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #cccccc; /* 연한 회색 */
+}
+
+/* 메뉴 리스트 스타일 */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+/* 각 메뉴 아이템 스타일 */
+.sidebar-item {
+  margin-bottom: 10px;
+}
+
+/* 메뉴 링크 기본 스타일 */
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  color: #ffffff; /* 기본 흰색 글씨 */
+  text-decoration: none;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+/* 활성화된 메뉴 스타일 */
+.sidebar-link.active {
+  background-color: #00c8ff; /* 하늘색 배경 */
+  color: #212121; /* 어두운 글씨 */
+  font-weight: bold;
+}
+
+/* 메뉴 링크 hover 스타일 */
+.sidebar-link:hover {
+  background-color: #444444; /* hover 시 약간 밝은 배경 */
+}
+
+.admin-dashboard {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.admin-service-info,
+.admin-mail-stats {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.service-info h2,
+.mail-stats h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  font-size: 14px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.chart-placeholder {
+  height: 150px;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 14px;
+}
