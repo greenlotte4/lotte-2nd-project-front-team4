@@ -109,3 +109,486 @@ body {
   color: #6c757d;
   font-size: 14px;
 }
+
+/* 통합 유저 관리 */
+/* 전체 컨테이너 */
+.my-member-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+.my-member-container h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px; /* 한 줄 띄우기 */
+}
+
+.top-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* 헤더 */
+.my-member-header {
+  background-color: #f3f3f3;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.member-summary {
+  display: flex;
+  justify-content: space-between; /* 왼쪽과 오른쪽 정렬 */
+  align-items: center;
+  margin-top: 10px; /* 제목과 간격 추가 */
+}
+
+.member-summary div {
+  font-size: 14px;
+  color: #666;
+}
+
+.member-summary strong {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+/* 버튼 섹션 스타일 */
+.member-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.member-actions button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.member-actions button:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.member-actions button:active {
+  background-color: #d6d6d6;
+  border-color: #aaa;
+}
+
+/* 테이블 스타일 */
+.member-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.member-table th,
+.member-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.member-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.member-table td {
+  background-color: #fff;
+}
+
+.member-table input[type='checkbox'] {
+  cursor: pointer;
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination span {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.pagination span:hover {
+  background-color: #e6e6e6;
+}
+
+/* 하단 검색 필드 */
+.member-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.member-footer input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.member-footer button {
+  background-color: #e6e6e6;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.member-footer button:hover {
+  background-color: #d9d9d9;
+}
+
+/* 캘린더 관리 */
+.calendar-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+.top-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.calendar-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.calendar-actions button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.calendar-actions button:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.calendar-table {
+  width: 100%;
+  padding: 20px;
+  border-collapse: collapse;
+  background-color: #fff; /* 테이블 배경을 흰색으로 설정 */
+  overflow: hidden; /* 둥근 테두리 내부에 내용 제한 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 (선택 사항) */
+}
+
+.calendar-table th,
+.calendar-table td {
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  border: none; /* 구분선 제거 */
+}
+
+.calendar-table th {
+  background-color: #f9f9f9; /* 헤더 배경을 약간 밝은 회색으로 */
+  font-weight: bold;
+}
+
+/* 커뮤니티 관리 */
+.community-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.top-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.summary {
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+  justify-content: space-between; /* 좌우 정렬 */
+  margin-bottom: 10px; /* 타이틀과의 여백 */
+}
+
+.total-count {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold; /* 강조 */
+  margin-right: 20px; /* 오른쪽 여백 */
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px; /* 타이틀과 총 커뮤니티 수 간격 */
+}
+
+.actions {
+  margin-bottom: 20px;
+}
+
+.actions button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #e0e0e0;
+}
+
+.community-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.community-table th,
+.community-table td {
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+.community-table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.pagination {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.pagination span {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer {
+  display: flex;
+  gap: 10px; /* 검색창과 버튼 사이 간격 */
+  align-items: center;
+  justify-content: center; /* 중앙 정렬 */
+}
+
+.footer input {
+  width: 300px; /* 검색창 너비 */
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.footer input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.footer button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #f0f0f0; /* 회색 버튼 */
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer button:hover {
+  background-color: #e0e0e0; /* hover 시 조금 더 어두운 회색 */
+}
+
+/* 게시판 관리 - 전체 */
+.board-container {
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.top-label {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.actions button {
+  background-color: #e0e0e0;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: white;
+}
+
+.board-table th,
+.board-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.status-filter {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 5px;
+}
+
+/* 공지사항 관리 */
+.notice-container {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.top-label {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.actions {
+  margin-bottom: 20px;
+}
+
+.delete-button {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.notice-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notice-table th,
+.notice-table td {
+  border: 1px solid #dddddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.notice-table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.settings-button {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.write-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.write-button:hover {
+  background-color: #0056b3;
+}
