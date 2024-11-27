@@ -2,7 +2,7 @@ import React from 'react';
 
 const AdminServiceInfo = () => {
   const serviceInfo = {
-    siteName: '관리자 데모',
+    siteName: '관리자',
     siteURL: 'adm.daouoffice.com',
     domainName: 'adm.daouoffice.com',
     totalAccounts: '100개 / 100개',
