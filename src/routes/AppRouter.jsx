@@ -64,13 +64,11 @@ const AppRouter = () => {
         <Route path="board/view" element={<View />} />
         <Route path="board/add" element={<Add />} />
         <Route path="board/update" element={<Update />} />
-
         <Route path="community" element={<Community />} />
         <Route path="community/list" element={<CommunityList />} />
         <Route path="community/write" element={<CommunityWrite />} />
         <Route path="community/view" element={<CommunityView />} />
         <Route path="community/update" element={<CommunityUpdate />} />
-
         <Route path="login" element={<Login />} />
         <Route path="findId" element={<FindId />} />
         <Route path="findPass" element={<FindPass />} />
