@@ -281,8 +281,13 @@ div.content {
 }
 
 /* Load More 버튼 스타일 */
+
+.load-more{
+  text-align: center;
+}
+
 .load-more button {
-  width: 100%;
+  width: 30%;
   padding: 10px;
   font-size: 16px;
   background-color: #007bff;
@@ -458,3 +463,23 @@ div.content {
 .add-board-form .form-actions button[type='button']:hover {
   background-color: #ddd;
 }
+
+
+.section-header{
+  background-color: white;
+  border: none;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.section-header > .user-img{
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.section-header a, .section-header  {
+  margin-right: 16px; 
+}
+

@@ -107,7 +107,7 @@ const TaskModal = ({ isOpen, onClose, task }) => {
 export default function project() {
   const sidebarItems = [
     { text: '홈', link: '/main', icon: <FaHome /> },
-    { text: '프로젝트', link: '/board', icon: <AiOutlineMail /> },
+    { text: '게시판', link: '/board', icon: <AiOutlineMail /> },
     { text: '캘린더', link: '/calendar', icon: <BsCalendar /> },
     { text: '자료실', link: '/drive', icon: <BiBookBookmark /> },
     { text: '커뮤니티', link: '/community', icon: <FaUsers /> },
