@@ -6,5 +6,10 @@ export const useOpenModal = create((set) => ({
   CloseMemberAddModal: () => set(() => ({ isOpenMemberAddModal: false })),
   ToggleMemberAddModal: () =>
     set((state) => ({ isOpenMemberAddModal: !state.isOpenMemberAddModal })),
-  removeAllBears: () => set({ bears: 0 }),
+
+  isOpenRoomCreateModal: false,
+  OpenRoomCreateModal: () => set(() => ({ isOpenRoomCreateModal: true })),
+  CloseRoomCreateModal: () => set(() => ({ isOpenRoomCreateModal: false })),
+  ToggleRoomCreateModal: () =>
+    set((state) => ({ isOpenRoomCreateModal: !state.isOpenRoomCreateModal })),
 }));

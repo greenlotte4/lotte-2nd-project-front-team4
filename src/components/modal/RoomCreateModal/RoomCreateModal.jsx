@@ -66,7 +66,7 @@ const CompleteButton = styled.button`
   cursor: pointer;
 `;
 
-const RoomMemberAddModal = ({ isOpen, afterOpenModal, closeModal }) => {
+const RoomCreateModal = ({ isOpen, afterOpenModal, closeModal }) => {
   return (
     <BaseModal
       isOpen={isOpen}
@@ -78,20 +78,20 @@ const RoomMemberAddModal = ({ isOpen, afterOpenModal, closeModal }) => {
     >
       <ModalContainer>
         <HeaderSection>
-          <HeaderTitle>테스트에 멤버 추가</HeaderTitle>
+          <HeaderTitle>채널 생성</HeaderTitle>
           <CloseButton onClick={closeModal}>
             <IoMdClose style={{ width: '20px', height: '20px' }} />
           </CloseButton>
         </HeaderSection>
         <MainSection>
-          <MemberAddInput type="text" placeholder="이름 또는 이메일 입력" />
+          <MemberAddInput type="text" placeholder="채널명 입력" />
         </MainSection>
         <FooterSection>
-          <CompleteButton>추가</CompleteButton>
+          <CompleteButton>생성</CompleteButton>
         </FooterSection>
       </ModalContainer>
     </BaseModal>
   );
 };
 
-export default RoomMemberAddModal;
+export default RoomCreateModal;

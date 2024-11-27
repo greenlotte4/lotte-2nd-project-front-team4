@@ -29,8 +29,11 @@ const BaseModal = ({
       isOpen={isOpen}
       onAfterOpen={afterOpenModal}
       onRequestClose={closeModal}
-      style={{ ...defaultCustomStyles, ...customStyles }}
-      contentLabel="Example Modal"
+      ariaHideApp={false}
+      style={{
+        ...defaultCustomStyles,
+        content: { ...defaultCustomStyles.content, ...customStyles.content },
+      }}
     >
       {children}
     </Modal>
