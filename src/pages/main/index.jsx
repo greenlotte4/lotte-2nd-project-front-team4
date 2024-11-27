@@ -3,15 +3,20 @@ import Sidebar from '@/components/common/Slidbar/Slidbar';
 import '../../styles/main/main_style.css';
 import logo from '../../assets/login/logo.png';
 import { HiOutlineBellAlert } from "react-icons/hi2";
+
 import { Link } from 'react-router-dom';
 import { FiHelpCircle } from "react-icons/fi";
+
 import { FaHome } from "react-icons/fa";
 import { AiOutlineMail } from 'react-icons/ai';
-import { BsCalendar } from 'react-icons/bs';
-import { BiBookBookmark } from 'react-icons/bi';
-import { FaUsers } from 'react-icons/fa';
-import { RiProjectorLine } from 'react-icons/ri';
+import { BsCalendar } from 'react-icons/bs'; 
+import { BiBookBookmark } from 'react-icons/bi'; 
+import { FaUsers } from 'react-icons/fa'; 
+import { RiProjectorLine } from 'react-icons/ri'; 
 import { MdChat } from 'react-icons/md';
+
+
+
 const index = () => {
   const sidebarItems = [
     { text: '홈', link: '/main', icon: <FaHome /> },
@@ -63,13 +68,13 @@ const index = () => {
                 }}
               >
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  <Link to={"/admin/home"}>관리자</Link>
+                  <Link to={"/admin/home"}>관리자</Link> 
                 </li>
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  <Link to={"/setting"}>설정</Link>
+                  <Link to={"/setting"}>설정</Link> 
                 </li>
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  <Link to={"/login"}>로그아웃</Link>
+                  <Link to={"/login"}>로그아웃</Link> 
                 </li>
               </ul>
             )}
