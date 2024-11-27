@@ -1,13 +1,13 @@
-import {React} from 'react';
+import React, { useState } from 'react';
 import Sidebar from '@/components/common/Slidbar/Slidbar';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/board/dev.css';
+import '../../styles/board/update.css';
 import { FaPencil } from 'react-icons/fa6';
 import { MdDelete } from 'react-icons/md';
 import { FaList } from 'react-icons/fa';
 import { MdFileCopy } from 'react-icons/md';
-import { MdUpdate } from "react-icons/md";
-// import '../../styles/board/view.css';
+
+import RichTextEditor from '@/components/board/BoardText/RichTextEditor';
 
 import { FaHome } from "react-icons/fa";
 import { AiOutlineMail } from 'react-icons/ai';
@@ -17,17 +17,22 @@ import { FaUsers } from 'react-icons/fa';
 import { RiProjectorLine } from 'react-icons/ri'; 
 import { MdChat } from 'react-icons/md';
 
-
-export default function Board() {
+export default function Update() {
   const navigate = useNavigate();
+
+  // 에디터의 초기 상태 설정
+  const [editorContent, setEditorContent] = useState([
+    { type: 'paragraph', children: [{ text: 'test 게시글입니다.' }] },
+  ]);
 
   const changeHandler = () => {
     navigate('/board/write');
   };
 
   const handleSubmit = () => {
-    // 등록 버튼 클릭 시 실행할 로직
-    console.log('등록 버튼 클릭');
+    // 에디터 내용 로그 출력
+    console.log('에디터 내용:', editorContent);
+    alert('수정되었습니다.');
   };
 
   const sidebarItems = [
@@ -98,9 +103,9 @@ export default function Board() {
             <header className="header">
               <h1 className="title">공지사항(데모)</h1>
               <div className="header-meta">
-                <h2 className="subtitle">게시물 목록</h2>
+                <h2 className="subtitle">게시물 수정</h2>
                 <div className="info">
-                  <span>운영자: 조수빈</span>
+                  <span>운영자: 라이언</span>
                   <span>LION 공지 게시판</span>
                 </div>
               </div>
@@ -119,22 +124,10 @@ export default function Board() {
               <section className="toolbar">
                 <ul className="actions">
                   <li>
-                    <a
-                      className="action write"
-                      // href="/app/board/post/write/10/60"
-                    >
+                    <a className="action write">
                       <FaPencil />
                       <span className="text-new" onClick={changeHandler}>
                         새글쓰기
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a className="action update" data-bypass="">
-                      <MdUpdate />
-                      <span className="text-update"
-                      onClick={() => navigate('/board/update?@{no}')}
-                      >수정
                       </span>
                     </a>
                   </li>
@@ -163,26 +156,6 @@ export default function Board() {
                   </li>
                 </ul>
               </section>
-              {/* Search Section */}
-              <div className="combine_search">
-                <div className="search_wrap">
-                  <select className="search_op" id="searchType">
-                    <option value="appSearch">게시판</option>
-                    <option value="title">제목</option>
-                    <option value="content">내용</option>
-                    <option value="writer">글쓴이</option>
-                  </select>
-                  <input
-                    className="c_search"
-                    type="text"
-                    id="simpleInput"
-                    placeholder="검색"
-                  />
-                  <button className="btn_search" id="simpleSearch">
-                    검색
-                  </button>
-                </div>
-              </div>
             </div>
 
             <section className="detail">
@@ -195,7 +168,7 @@ export default function Board() {
                 </h1>
                 <div className="meta">
                   <a data-userid="234" className="author" data-bypass="">
-                    김소희 부장
+                    김소희 대표
                   </a>
                   <br />
                   <span className="date">2024-11-26(화) 12:59</span>
@@ -214,37 +187,16 @@ export default function Board() {
                   </ul>
                 </div>
                 <div id="boardContent">
-                  <p>test 게시글입니다.</p>
+                  <RichTextEditor
+                    value={editorContent}
+                    onChange={(value) => setEditorContent(value)}
+                  />
                 </div>
               </article>
+              <button className="button submit" onClick={handleSubmit}>
+                수정
+              </button>
             </section>
-            {/* Replies Section */}
-            <div className="reply-list">
-              <ul className="reply-items">
-                <li className="reply-item">
-                  <div className="reply-content">
-                    <p>작성된 댓글입니다.</p>
-                  </div>
-                  <div className="reply-actions">
-                    <button className="button edit">수정</button>
-                    <button className="button delete">삭제</button>
-                  </div>
-                </li>
-              </ul>
-              <div className="reply-create">
-                <div className="form-wrap">
-                  <div className="textarea-wrap">
-                    <textarea
-                      className="input"
-                      placeholder="댓글을 남겨보세요"
-                    ></textarea>
-                    <button className="button submit" id="create">
-                      등록
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
