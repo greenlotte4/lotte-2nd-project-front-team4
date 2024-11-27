@@ -1,8 +1,11 @@
-import React, { useState } from "react";
 import Sidebar from '@/components/common/Slidbar/Slidbar';
-import '../styles/main/main_style.css';
-import logo from '../assets/login/logo.png';
+import '../../styles/main/main_style.css';
+import logo from '../../assets/login/logo.png';
 import { HiOutlineBellAlert } from "react-icons/hi2";
+
+import { Link } from 'react-router-dom';
+import { FiHelpCircle } from "react-icons/fi";
+
 import { FaHome } from "react-icons/fa";
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsCalendar } from 'react-icons/bs'; 
@@ -10,23 +13,21 @@ import { BiBookBookmark } from 'react-icons/bi';
 import { FaUsers } from 'react-icons/fa'; 
 import { RiProjectorLine } from 'react-icons/ri'; 
 import { MdChat } from 'react-icons/md';
-import { Link } from 'react-router-dom';
 
-import { FiHelpCircle } from "react-icons/fi";
+
 
 const index = () => {
   const sidebarItems = [
-    { text: '홈', link: '/main', icon: <FaHome /> },
-    { text: '게시판', link: '/board', icon: <AiOutlineMail /> },
-    { text: '캘린더', link: '/calendar', icon: <BsCalendar /> },
-    { text: '자료실', link: '/drive', icon: <BiBookBookmark /> },
-    { text: '커뮤니티', link: '/community', icon: <FaUsers /> },
-    { text: '프로젝트', link: '/project', icon: <RiProjectorLine /> },
-    { text: '채팅', link: '/chat', icon: <MdChat /> },
+    { text: '홈', link: '/main', icon: 'home-icon.png' },
+    { text: '게시판', link: '/board', icon: 'mail-icon.png' },
+    { text: '캘린더', link: '/calendar', icon: 'address-book-icon.png' },
+    { text: '자료실', link: '/drive', icon: 'works-icon.png' },
+    { text: '커뮤니티', link: '/community', icon: 'board-icon.png' },
+    { text: '프로젝트', link: '/project', icon: 'calendar-icon.png' },
+    { text: '채팅', link: '/chat', icon: 'calendar-icon.png' },
   ];
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
-
   return (
     <body>
       <div className="dashboard">
@@ -66,16 +67,13 @@ const index = () => {
                 }}
               >
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  관리자
+                  <Link to={"/admin/home"}>관리자</Link> 
                 </li>
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  프로필
+                  <Link to={"/setting"}>설정</Link> 
                 </li>
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  설정
-                </li>
-                <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  로그아웃
+                  <Link to={"/login"}>로그아웃</Link> 
                 </li>
               </ul>
             )}
