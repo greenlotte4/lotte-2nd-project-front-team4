@@ -6,6 +6,14 @@ import ChatMain from '@/components/chat/ChatMain/ChatMain';
 import RecentChat from '@/components/chat/ChatMain/RecentChat/RecentChat';
 import RegisterChannel from '@/components/chat/ChatMain/RegisterChannel/RegisterChannel';
 import ChatRoom from '@/components/chat/ChatRoom/ChatRoom';
+import AdminLayout from '@/layouts/AdminLayout/AdminLayout';
+
+const Home = lazy(() => import('@/pages/admin/Home'));
+const CommunityAll = lazy(() => import('@/pages/admin/CommunityAll'));
+const CalendarHoliday = lazy(() => import('@/pages/admin/CalendarHoliday'));
+const BoardList = lazy(() => import('@/pages/admin/BoardList'));
+const BoardSetting = lazy(() => import('@/pages/admin/BoardSetting'));
+const MyMember = lazy(() => import('@/pages/admin/MyMember'));
 
 const MyPage = lazy(() => import('@/pages'));
 const Board = lazy(() => import('@/pages/board/board'));
@@ -71,6 +79,18 @@ const AppRouter = () => {
         <Route path="calendar/write" element={<CalendarWrite />} />
         <Route path="calendar/modify" element={<CalendarModify />} />
         <Route path="calendar/setting" element={<CalendarSetting />} />
+        {/* 관리자 라우트 */}
+
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="home" replace />} />{' '}
+          {/* 기본 경로 */}
+          <Route path="home" element={<Home />} />
+          <Route path="community/all" element={<CommunityAll />} />
+          <Route path="calendar/holiday" element={<CalendarHoliday />} />
+          <Route path="board/list" element={<BoardList />} />
+          <Route path="board/setting" element={<BoardSetting />} />
+          <Route path="my/member" element={<MyMember />} />
+        </Route>
 
         <Route path="/*" element={<div>404</div>} />
       </Routes>
