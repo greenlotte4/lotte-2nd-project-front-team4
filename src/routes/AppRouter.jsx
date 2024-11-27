@@ -6,6 +6,7 @@ import ChatMain from '@/components/chat/ChatMain/ChatMain';
 import RecentChat from '@/components/chat/ChatMain/RecentChat/RecentChat';
 import RegisterChannel from '@/components/chat/ChatMain/RegisterChannel/RegisterChannel';
 import ChatRoom from '@/components/chat/ChatRoom/ChatRoom';
+import Landing from '../pages/landing/Landing';
 import AdminLayout from '@/layouts/AdminLayout/AdminLayout';
 
 const Home = lazy(() => import('@/pages/admin/Home'));
@@ -98,6 +99,10 @@ const AppRouter = () => {
         <Route path="calendar/write" element={<CalendarWrite />} />
         <Route path="calendar/modify" element={<CalendarModify />} />
         <Route path="calendar/setting" element={<CalendarSetting />} />
+        {/* 새로 추가된 Landing 경로 */}
+        <Route path="login" element={<Login />} />
+        <Route path="landing" element={<Landing />} />
+
         {/* 관리자 라우트 */}
 
         <Route path="/admin" element={<AdminLayout />}>
@@ -112,6 +117,7 @@ const AppRouter = () => {
         </Route>
 
         <Route path="/*" element={<div>404</div>} />
+      
       </Routes>
     </Suspense>
   );
