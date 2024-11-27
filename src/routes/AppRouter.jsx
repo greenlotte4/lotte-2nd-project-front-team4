@@ -23,6 +23,13 @@ const Write = lazy(() => import('@/pages/board/write'));
 const View = lazy(() => import('@/pages/board/view'));
 const Add = lazy(() => import('@/pages/board/add'));
 const Update = lazy(() => import('@/pages/board/Update'));
+
+const Community = lazy(() => import('@/pages/community/community'));
+const CommunityList = lazy(() => import('@/pages/community/list'));
+const CommunityWrite = lazy(() => import('@/pages/community/write'));
+const CommunityView = lazy(() => import('@/pages/community/view'));
+const CommunityUpdate = lazy(() => import('@/pages/community/update'));
+
 const Login = lazy(() => import('@/pages/user/login'));
 const Terms = lazy(() => import('@/pages/user/terms'));
 const Register = lazy(() => import('@/pages/user/register'));
@@ -56,6 +63,13 @@ const AppRouter = () => {
         <Route path="board/view" element={<View />} />
         <Route path="board/add" element={<Add />} />
         <Route path="board/update" element={<Update />} />
+
+        <Route path="community" element={<Community />} />
+        <Route path="community/list" element={<CommunityList />} />
+        <Route path="community/write" element={<CommunityWrite />} />
+        <Route path="community/view" element={<CommunityView />} />
+        <Route path="community/update" element={<CommunityUpdate />} />
+
         <Route path="login" element={<Login />} />
         <Route path="findId" element={<FindId />} />
         <Route path="findPass" element={<FindPass />} />
