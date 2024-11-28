@@ -25,6 +25,7 @@
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "gantt-task-react": "^0.3.9",
+    "i": "^0.3.7",
     "i18next": "^24.0.0",
     "i18next-browser-languagedetector": "^8.0.0",
     "is-hotkey": "^0.2.0",
