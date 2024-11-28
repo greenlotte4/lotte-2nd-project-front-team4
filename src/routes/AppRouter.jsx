@@ -36,6 +36,7 @@ const Terms = lazy(() => import('@/pages/user/terms'));
 const Register = lazy(() => import('@/pages/user/register'));
 const FindId = lazy(() => import('@/pages/user/findId'));
 const FindPass = lazy(() => import('@/pages/user/findPass'));
+const Setting = lazy(() => import('@/pages/user/Setting'));
 const Main = lazy(() => import('@/pages/main/index'));
 const Chat = lazy(() => import('@/pages/chat/Chat'));
 const Project = lazy(() => import('@/pages/project/Project'));
@@ -72,6 +73,7 @@ const AppRouter = () => {
         <Route path="login" element={<Login />} />
         <Route path="findId" element={<FindId />} />
         <Route path="findPass" element={<FindPass />} />
+        <Route path="setting" element={<Setting />} />
         <Route path="terms" element={<Terms />} />
         <Route path="register" element={<Register />} />
         <Route path="Main" element={<Main />} />
@@ -97,8 +99,8 @@ const AppRouter = () => {
         <Route path="calendar/write" element={<CalendarWrite />} />
         <Route path="calendar/modify" element={<CalendarModify />} />
         <Route path="calendar/setting" element={<CalendarSetting />} />
+        
         {/* 새로 추가된 Landing 경로 */}
-        <Route path="login" element={<Login />} />
         <Route path="landing" element={<Landing />} />
 
         {/* 관리자 라우트 */}

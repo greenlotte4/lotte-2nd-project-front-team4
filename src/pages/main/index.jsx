@@ -9,12 +9,11 @@ import { FiHelpCircle } from "react-icons/fi";
 
 import { FaHome } from "react-icons/fa";
 import { AiOutlineMail } from 'react-icons/ai';
-import { BsCalendar } from 'react-icons/bs'; 
-import { BiBookBookmark } from 'react-icons/bi'; 
-import { FaUsers } from 'react-icons/fa'; 
-import { RiProjectorLine } from 'react-icons/ri'; 
+import { BsCalendar } from 'react-icons/bs';
+import { BiBookBookmark } from 'react-icons/bi';
+import { FaUsers } from 'react-icons/fa';
+import { RiProjectorLine } from 'react-icons/ri';
 import { MdChat } from 'react-icons/md';
-
 
 
 const index = () => {
@@ -38,7 +37,7 @@ const index = () => {
         <main className="main-content">
           {/* 공통 섹션 맨위부분 */}
           <section className="section-header">
-          <Link to={"/assistant"}>
+          <Link to={"/landing"}>
             <FiHelpCircle size={30} />
           </Link>
           <Link to="/alert">
@@ -68,13 +67,13 @@ const index = () => {
                 }}
               >
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  <Link to={"/admin/home"}>관리자</Link> 
+                  <Link to={"/admin/home"}>관리자</Link>
                 </li>
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  <Link to={"/setting"}>설정</Link> 
+                  <Link to={"/setting"}>설정</Link>
                 </li>
                 <li style={{ padding: "8px 12px", cursor: "pointer" }}>
-                  <Link to={"/login"}>로그아웃</Link> 
+                  <Link to={"/login"}>로그아웃</Link>
                 </li>
               </ul>
             )}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import '../../styles/landing/landing.css';
+import '../../styles/landing/landing.scss';
 import bannerImg from '../../assets/img/banner.jpg';
 import logoImg from '../../assets/img/logo.png';
 
@@ -39,7 +39,7 @@ const App = () => {
   };
 
   return (
-    <div lang="ko">
+    <div id='landing' lang="ko">
       <header className="header" data-aos="fade-down" data-aos-duration="1500">
         <div className="header-top">
           <div className="announcement" data-aos="fade-up" data-aos-delay="100">

@@ -11,6 +11,10 @@ body {
   height: 100vh;
 }
 
+.aside {
+  background-color: white;
+}
+
 .side {
   width: 250px;
   background: #f4f4f4;

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from '@/components/common/Slidbar/Slidbar';
-import '../../styles/project/Project.css';
-import Modal from "react-modal";
+import '../../styles/project/Project.scss';
 import { Gantt, ViewMode } from "gantt-task-react";
 import "gantt-task-react/dist/index.css"; 
 import logo from '../../assets/login/logo.png';
@@ -67,43 +66,7 @@ const convertToGanttTasks = (wbsData) => {
   return tasks;
 };
 
-const TaskModal = ({ isOpen, onClose, task }) => {
-  if (!task) return null; // task가 없으면 아무것도 렌더링하지 않음
 
-  const [responsible, setResponsible] = useState(task.responsible || "");
-  const [startDate, setStartDate] = useState(task.start || "");
-  const [endDate, setEndDate] = useState(task.end || "");
-
-  const handleSave = () => {
-    console.log({
-      task: task.name,
-      responsible,
-      startDate,
-      endDate,
-    });
-    onClose();
-  };
-
-  return (
-    <Modal isOpen={isOpen} onRequestClose={onClose} ariaHideApp={false}>
-      <h2>{task.name} 설정</h2>
-      <label>
-        담당자:
-        <input value={responsible} onChange={(e) => setResponsible(e.target.value)} />
-      </label>
-      <label>
-        시작일:
-        <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-      </label>
-      <label>
-        종료일:
-        <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
-      </label>
-      <button onClick={handleSave}>저장</button>
-      <button onClick={onClose}>취소</button>
-    </Modal>
-  );
-};
 export default function project() {
   const sidebarItems = [
     { text: '홈', link: '/main', icon: <FaHome /> },
@@ -115,20 +78,11 @@ export default function project() {
     { text: '채팅', link: '/chat', icon: <MdChat /> },
   ];
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [modalTask, setModalTask] = useState(null);
+  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
   const ganttTasks = convertToGanttTasks(wbsData);
 
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
-  const openModal = (task) => setModalTask(task);
-  const closeModal = () => setModalTask(null);
-
   return (
-    <body
-      id="main"
-      data-role="main"
-      data-app-name="project"
-      className="go_skin_default go_skin_advanced mini"
-    >
+    <div id="project">
       <div className="go_wrap">
         <div className="go_body go_renew" style={{ display: 'flex' }}>
           <header className="go_header go_header_2row go_header_advanced">
@@ -223,10 +177,9 @@ export default function project() {
             <section className="gantt-chart">
               <Gantt tasks={ganttTasks} viewMode={ViewMode.Day} />
             </section>
-            <TaskModal isOpen={!!modalTask} onClose={closeModal} task={modalTask} />
           </main>
         </div>
       </div>
-    </body>
+    </div>
   );
-}
+};
